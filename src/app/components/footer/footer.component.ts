@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '@shared/services';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private commonService: CommonService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  changeLang(lang: string) {
+    this.commonService.changeLang(lang);
   }
 
 }

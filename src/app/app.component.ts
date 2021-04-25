@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
+import { environment } from 'environments/environment';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +11,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   constructor(private http: HttpClient) {
-    this.http.get('http://localhost:3000/', {
+    this.http.get(environment.host, {
       headers: {
         'Accept-Language': 'sr'
       }
@@ -17,6 +19,4 @@ export class AppComponent {
       result => console.log(result)
     )
   }
-
-  title = 'loo-wear';
 }
