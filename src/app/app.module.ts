@@ -1,17 +1,23 @@
 import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
+import { Router } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppConfig } from '@app/app.config';
 import { AppRoutingModule } from '@app/app-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { AppErrorInterceptor, AppHttpInterceptor } from '@shared/interceptors';
+import { DiscordService } from '@shared/services';
 
 import { AppComponent } from '@app/app.component';
 import {
   AppOutletComponent,
   NavbarComponent,
-  FooterComponent
+  FooterComponent,
 } from '@app/components';
 
 export function AppInitializer(config: AppConfig) {
@@ -23,33 +29,28 @@ export function AppInitializer(config: AppConfig) {
     AppComponent,
     AppOutletComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SharedModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule],
   providers: [
     AppConfig,
     {
       provide: APP_INITIALIZER,
       useFactory: AppInitializer,
       deps: [AppConfig, HttpClient],
-      multi: true
+      multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AppHttpInterceptor,
-      multi: true
+      multi: true,
     },
     {
       provide: ErrorHandler,
       useClass: AppErrorInterceptor,
-      deps: []
-    }
+      deps: [Router, DiscordService],
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
