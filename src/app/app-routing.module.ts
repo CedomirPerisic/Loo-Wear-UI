@@ -10,25 +10,36 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('@pages/home/home.module').then(m => m.HomeModule)
+        loadChildren: () =>
+          import('@pages/home/home.module').then((m) => m.HomeModule),
       },
       {
         // !404 - keep this route at the end of child!!
         // move this route at the end of parent array if nav and footer need to be hidden at 404 page
-        path: '**',
-        loadChildren: () => import('@pages/not-found/not-found.module').then(m => m.NotFoundModule)
-      }
-    ]
+        path: 'page-not-found',
+        loadChildren: () =>
+          import('@pages/not-found/not-found.module').then(
+            (m) => m.NotFoundModule
+          ),
+      },
+    ],
   },
   {
     // 500 (navbar and footer not visible)
-    path: 'error',
-    loadChildren: () => import('@app/pages/server-error/server-error.module').then(m => m.ServerErrorModule)
-  }
+    path: 'server-error',
+    loadChildren: () =>
+      import('@app/pages/server-error/server-error.module').then(
+        (m) => m.ServerErrorModule
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

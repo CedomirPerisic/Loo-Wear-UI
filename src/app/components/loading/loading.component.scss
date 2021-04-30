@@ -1,0 +1,7 @@
+@import "assets/styles/variable.scss";
+
+.global-spinner {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: $black-color, $alpha: 0.5);
+}

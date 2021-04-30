@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import * as AppGlobals from 'app.globals';
 import { environment } from 'environments/environment';
 
 @Component({
@@ -8,8 +9,9 @@ import { environment } from 'environments/environment';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {
+    // !Ony for testing purpose! Remove after implementing APIs
     this.http
       .get(environment.host, {
         headers: {
@@ -18,4 +20,6 @@ export class AppComponent {
       })
       .subscribe((result) => console.log(result));
   }
+
+  ngOnInit() {}
 }

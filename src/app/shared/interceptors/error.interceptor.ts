@@ -8,6 +8,8 @@ import { DiscordService } from '@shared/services';
 
 import { environment } from 'environments/environment';
 
+import * as AppGlobals from 'app.globals';
+
 @Injectable({ providedIn: 'root' })
 export class AppErrorInterceptor implements ErrorHandler {
   constructor(private router: Router, private discordService: DiscordService) {
@@ -40,20 +42,20 @@ export class AppErrorInterceptor implements ErrorHandler {
     if (error instanceof HttpErrorResponse) {
       const httpError: HttpErrorResponse = error;
       if (
-        (httpError.status === 0 || httpError.status === 503) &&
+        (httpError.status === AppGlobals.SERVER_DOWN_STATUS ||
+          httpError.status === AppGlobals.SERVER_UNAVAILABLE_STATUS) &&
         environment.production
       ) {
         // TODO: Change this after introduce server to others
-        errorMessage =
-          'Server is unavailable!\nHttp failure response for http://localhost:3000/';
-        this.router.navigate(['error']);
+        errorMessage = `Server is unavailable!\nHttp failure response for ${httpError.url}`;
+        this.router.navigate(['server-error']);
       } else {
-        if (httpError.status === 400) {
+        if (httpError.status === AppGlobals.BAD_REQUEST_STATUS) {
           errorMessage = error.error.message;
         }
-        if (httpError.status === 500) {
+        if (httpError.status === AppGlobals.SERVER_ERROR_STATUS) {
           // TODO: Redirect to server error page
-          // this.router.navigate(['error']);
+          this.router.navigate(['server-error']);
         }
       }
     }
