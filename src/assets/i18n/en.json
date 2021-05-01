@@ -2,5 +2,9 @@
   "common": {
     "hello": "Hello",
     "test": "Test {{name}}"
+  },
+  "error": {
+    "serverError": "Server Error",
+    "serverUnavailable": "Server is unavailable"
   }
 }

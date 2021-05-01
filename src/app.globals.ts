@@ -17,3 +17,13 @@ export const SERVER_UNAVAILABLE_STATUS = 503;
 export const RETRY_COUNT = 1;
 export const RETRY_DELAY_SHORT = 500; // 0.5s
 export const RETRY_DELAY_LONG = 1000; // 1s
+
+// notification
+export const NOTIFICATION_DURATION = 3000; // 3s
+export const NOTIFICATION_HORIZONTAL_POSITION = 'center';
+export const NOTIFICATION_VERTICAL_POSITION = 'bottom';
+
+// animation:
+export const ANIMATION_DURATION_SHORT = '400ms'; // 0.4s
+export const ANIMATION_DURATION_MEDIUM = '600ms'; // 0.6s
+export const ANIMATION_DURATION_LONG = '800ms'; // 0.8s

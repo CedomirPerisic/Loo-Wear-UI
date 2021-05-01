@@ -7,18 +7,16 @@ import { SharedModule } from '@shared/shared.module';
 import { ServerErrorComponent } from './server-error.component';
 
 @NgModule({
-  declarations: [
-    ServerErrorComponent
-  ],
+  declarations: [ServerErrorComponent],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild([
       {
         path: '',
-        component: ServerErrorComponent
-      }
-    ])
-  ]
+        component: ServerErrorComponent,
+      },
+    ]),
+  ],
 })
 export class ServerErrorModule {}

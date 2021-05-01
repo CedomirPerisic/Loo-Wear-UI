@@ -7,18 +7,16 @@ import { SharedModule } from '@shared/shared.module';
 import { NotFoundComponent } from './not-found.component';
 
 @NgModule({
-  declarations: [
-    NotFoundComponent
-  ],
+  declarations: [NotFoundComponent],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild([
       {
         path: '',
-        component: NotFoundComponent
-      }
-    ])
-  ]
+        component: NotFoundComponent,
+      },
+    ]),
+  ],
 })
 export class NotFoundModule {}

@@ -20,7 +20,6 @@ export class LoadingComponent implements OnInit {
     this.loadingService.showLoader$
       .pipe(distinct(), delay(0))
       .subscribe((data: LoaderData) => {
-        console.log(data);
         if (data.type === 'progress') {
           this.showProgress = data.isLoading;
         } else if (data.type === 'spinner') {

@@ -14,6 +14,13 @@ const routes: Routes = [
           import('@pages/home/home.module').then((m) => m.HomeModule),
       },
       {
+        path: 'collections/:name',
+        loadChildren: () =>
+          import('@pages/collections/collections.module').then(
+            (m) => m.CollectionsModule
+          ),
+      },
+      {
         // !404 - keep this route at the end of child!!
         // move this route at the end of parent array if nav and footer need to be hidden at 404 page
         path: 'page-not-found',
@@ -28,7 +35,7 @@ const routes: Routes = [
     // 500 (navbar and footer not visible)
     path: 'server-error',
     loadChildren: () =>
-      import('@app/pages/server-error/server-error.module').then(
+      import('@pages/server-error/server-error.module').then(
         (m) => m.ServerErrorModule
       ),
   },
@@ -39,7 +46,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

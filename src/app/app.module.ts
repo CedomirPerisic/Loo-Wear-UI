@@ -22,8 +22,6 @@ import {
   FooterComponent,
   LoadingComponent,
 } from '@app/components';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 export function AppInitializer(config: AppConfig) {
   return () => config.init();
@@ -43,8 +41,6 @@ export function AppInitializer(config: AppConfig) {
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
   ],
   providers: [
     AppConfig,

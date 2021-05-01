@@ -42,13 +42,14 @@ export class AppErrorInterceptor implements ErrorHandler {
     if (error instanceof HttpErrorResponse) {
       const httpError: HttpErrorResponse = error;
       if (
-        (httpError.status === AppGlobals.SERVER_DOWN_STATUS ||
-          httpError.status === AppGlobals.SERVER_UNAVAILABLE_STATUS) &&
-        environment.production
+        httpError.status === AppGlobals.SERVER_DOWN_STATUS ||
+        httpError.status === AppGlobals.SERVER_UNAVAILABLE_STATUS
       ) {
         // TODO: Change this after introduce server to others
-        errorMessage = `Server is unavailable!\nHttp failure response for ${httpError.url}`;
-        this.router.navigate(['server-error']);
+        errorMessage = `Server is unavailable!`;
+        if (!environment.production) {
+          this.router.navigate(['server-error']);
+        }
       } else {
         if (httpError.status === AppGlobals.BAD_REQUEST_STATUS) {
           errorMessage = error.error.message;

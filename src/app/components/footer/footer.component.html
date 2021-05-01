@@ -1,5 +1,9 @@
 <p>footer works!</p>
 <p>{{ "common.test" | translate: { name: "Hello" } }}</p>
+<ul>
+  <li *ngFor="let item of arrToMap | mapping: transformArray">{{ item }}</li>
+</ul>
+<button (click)="showNotification()">Show Notification</button>
 
 <button (click)="changeLang('en')">EN</button>
 <button (click)="changeLang('sr')">SR</button>

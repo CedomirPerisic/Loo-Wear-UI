@@ -1,3 +1,5 @@
+@import "./variable.scss";
+
 html,
 body {
   height: 100%;
@@ -5,4 +7,26 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-wrapper {
+  min-height: calc(100vh - #{$header-height});
+  position: relative;
+}
+
+// Notification (snackbar)
+.mat-snack-bar-container {
+  color: $white-color;
+  .mat-simple-snackbar-action {
+    color: $white-color;
+  }
+  &.error {
+    background-color: $error-color;
+  }
+  &.warning {
+    background-color: $warning-color;
+  }
+  &.success {
+    background-color: $success-color;
+  }
 }
