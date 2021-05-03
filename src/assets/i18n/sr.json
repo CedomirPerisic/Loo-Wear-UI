@@ -2,5 +2,9 @@
   "common": {
     "hello": "Zdravo",
     "test": "Testiram srpski {{name}}"
+  },
+  "error": {
+    "serverError": "Serverska Greska",
+    "serverUnavailable": "Server je nedostupan"
   }
 }

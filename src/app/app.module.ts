@@ -6,18 +6,23 @@ import {
 } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppConfig } from '@app/app.config';
 import { AppRoutingModule } from '@app/app-routing.module';
+
 import { SharedModule } from '@shared/shared.module';
 import { AppErrorInterceptor, AppHttpInterceptor } from '@shared/interceptors';
 import { DiscordService } from '@shared/services';
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from '@app/app.component';
 import {
   AppOutletComponent,
   NavbarComponent,
   FooterComponent,
+  LoadingComponent,
 } from '@app/components';
 
 export function AppInitializer(config: AppConfig) {
@@ -30,8 +35,16 @@ export function AppInitializer(config: AppConfig) {
     AppOutletComponent,
     NavbarComponent,
     FooterComponent,
+    LoadingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    SharedModule,
+    BsDropdownModule.forRoot(),
+  ],
   providers: [
     AppConfig,
     {

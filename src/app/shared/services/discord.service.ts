@@ -5,12 +5,12 @@ import { environment } from 'environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DiscordService {
-  private discordEndpoint =
+  private _discordEndpoint =
     environment.discord.host +
     environment.discord.serverId +
     environment.discord.webHook;
 
-  private botUsername = environment.discord.botUsername;
+  private _botUsername = environment.discord.botUsername;
 
   errorColor = '#C70039';
   warningColor = '#E8BB1A';
@@ -19,7 +19,7 @@ export class DiscordService {
 
   sendErrorMessage(message: string) {
     const data = {
-      username: this.botUsername,
+      username: this._botUsername,
       embeds: [
         {
           title: 'ERROR!',
@@ -30,16 +30,16 @@ export class DiscordService {
             }`,
           },
           timestamp: new Date().toISOString,
-          color: this.hexToDecimal(this.errorColor),
+          color: this._hexToDecimal(this.errorColor),
         },
       ],
     };
-    return this.sendMessage(data);
+    return this._sendMessage(data);
   }
 
   sendWarningMessage(message: string) {
     const data = {
-      username: this.botUsername,
+      username: this._botUsername,
       embeds: [
         {
           title: 'WARNING!',
@@ -50,16 +50,16 @@ export class DiscordService {
             }`,
           },
           timestamp: new Date().toISOString,
-          color: this.hexToDecimal(this.warningColor),
+          color: this._hexToDecimal(this.warningColor),
         },
       ],
     };
-    this.sendMessage(data);
+    this._sendMessage(data);
   }
 
-  private sendMessage(data: any) {
+  private _sendMessage(data: any) {
     this.http
-      .post(this.discordEndpoint, data, {
+      .post(this._discordEndpoint, data, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
         }),
@@ -67,7 +67,7 @@ export class DiscordService {
       .subscribe();
   }
 
-  private hexToDecimal(hex: string) {
+  private _hexToDecimal(hex: string) {
     return parseInt(hex.replace('#', ''), 16);
   }
 }

@@ -1,6 +1,8 @@
 <!-- Header -->
 <app-navbar></app-navbar>
 <!-- Main content outlet -->
-<router-outlet></router-outlet>
+<div class="page-wrapper" [@routeAnimation]="outlet.activatedRoute.url | async">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
 <!-- Footer -->
 <app-footer></app-footer>

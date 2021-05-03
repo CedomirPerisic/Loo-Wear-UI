@@ -1,10 +1,18 @@
-:root {
-  // FONT FAMILY:
+// FONT FAMILY:
 
-  // FONT-SIZE:
-  --default-font-size: 1rem;
+// FONT-SIZE:
+$default-font-size: 1rem;
 
-  // COLORS:
-  --black-color: #000000;
-  --white-color: #ffffff;
-}
+// COLORS:
+$black-color: #000000;
+$white-color: #ffffff;
+
+$error-color: #d32f2f;
+$warning-color: #fbc02d;
+$success-color: #689f38;
+
+$primary-color: #e7a992;
+$primary-color-light: #f9ebe6;
+
+// COMPONENTS:
+$header-height: 56px;

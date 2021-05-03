@@ -1,11 +1,19 @@
-import { Injectable } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
+import { HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { throwError } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class CommonService {
-  constructor(
-    private translate: TranslateService
-  ) {}
+  public get langs(): string[] {
+    return this.translate.langs;
+  }
+
+  public get currentLang(): string {
+    return this.translate.currentLang;
+  }
+
+  constructor(private translate: TranslateService) {}
 
   // Translate
   changeLang(lang: string) {
@@ -18,13 +26,4 @@ export class CommonService {
       window.location.reload();
     }
   }
-
-  public get langs() : string[] {
-    return this.translate.langs;
-  }
-
-  public get currentLang() : string {
-    return this.translate.currentLang;
-  }
-  
 }
