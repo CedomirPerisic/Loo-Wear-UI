@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ToggleDropdownDirective } from './directives/toggle-dropdown.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -15,7 +16,8 @@ const directives = []
 @NgModule({
   declarations: [
     components,
-    directives
+    directives,
+    ToggleDropdownDirective
   ],
   imports: [
     CommonModule,

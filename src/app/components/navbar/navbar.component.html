@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">{{ title }}</a>
+<nav class="navbar navbar-expand-lg navbar-light nav-pading">
+  <a class="navbar-brand" href="#">
+    <img src="./../../../assets/pictures/logo.jpeg" style="width: 5rem;" alt="">
+  </a>
   <button
     class="navbar-toggler"
     type="button"
@@ -12,51 +14,89 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"
-          >Home <span class="sr-only">(current)</span></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+  <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <div class="btn-group" dropdown>
+        <div (mouseover)="open=true" (mouseout)="open=false">
+          <span *ngIf="!open">Hide</span>
+          <span *ngIf="open">Show</span>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-          >Disabled</a
-        >
-      </li>
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
+                aria-controls="dropdown-basic">
+                <span class="text">
+                  {{ history }}
+                </span>
+          <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#">Loo</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Lara</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Unja</a></li>
+        </ul>
+      </div>
+      <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
+                aria-controls="dropdown-basic">
+                <span class="text">
+                  {{ collections }}
+                </span>
+          <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#">#2020 ime</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">#2021 ime</a></li>
+        </ul>
+      </div>
+      <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
+                aria-controls="dropdown-basic">
+                <span class="text">
+                  {{ products }}
+                </span>
+          <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#">Swimwear</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Wear</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Accessories</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Bags</a></li>
+        </ul>
+      </div>
+      <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
+                aria-controls="dropdown-basic">
+                <span class="text">
+                  {{ media }}
+                </span>
+          <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#">Instagram</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Facebook</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Mail</a></li>
+          <li class="divider dropdown-divider"></li>
+        </ul>
+      </div>
+      <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
+                aria-controls="dropdown-basic">
+                <span class="text">
+                  {{ contact }}
+                </span>
+          <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#">Instagram</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Facebook</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Mail</a></li>
+          <li class="divider dropdown-divider"></li>
+        </ul>
+      </div>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
   </div>
 </nav>
