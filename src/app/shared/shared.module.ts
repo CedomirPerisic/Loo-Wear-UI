@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ToggleDropdownDirective } from './directives/toggle-dropdown.directive';
 
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -33,12 +32,7 @@ const material = [
 const bootstrap = [];
 
 @NgModule({
-  declarations: [
-    components,
-    directives,
-    pipes,
-    ToggleDropdownDirective
-  ],
+  declarations: [components, directives, pipes],
   imports: [
     material,
     bootstrap,
