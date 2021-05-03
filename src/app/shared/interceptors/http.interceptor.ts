@@ -67,7 +67,7 @@ export class AppHttpInterceptor implements HttpInterceptor {
             console.log('HTTP INTERCEPTOR', error);
           }
 
-          let message = error.message;
+          let message = error.error.message;
 
           if (error.status === AppGlobals.SERVER_DOWN_STATUS) {
             message = 'Server is unavailable!\nTry Again later!';
