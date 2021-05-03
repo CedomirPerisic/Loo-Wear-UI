@@ -30,3 +30,42 @@ body {
     background-color: $success-color;
   }
 }
+
+.nav-menu {
+  min-width: 100%;
+  font-size: 1rem;
+  border:none;
+  border-radius: 0;
+}
+.header-nav-btn {
+  width: 10rem;
+}
+.dropdown-item { text-transform: uppercase; }
+.header-nav-btn .text{
+  width: 10rem;
+  font-size: 1rem;
+  outline: none;
+  font-family:"ITC Avant Garde Gothic", sans-serif;
+  text-transform: uppercase;
+}
+.header-nav-btn:focus,
+.header-nav-btn:hover {
+  box-shadow: none;
+  color: rgb(231 169 146);
+}
+.nav-pading {
+  padding:0 4rem;
+  background-color: transparent;
+}
+.nav-pading:hover {
+
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: rgb(231 169 146);
+  background-color: white;
+}
+.dropdown-item.active, .dropdown-item:active {
+  background-color: white;
+}
+//     color: rgb(231 169 146);

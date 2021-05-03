@@ -14,6 +14,8 @@ import { AppRoutingModule } from '@app/app-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { AppErrorInterceptor, AppHttpInterceptor } from '@shared/interceptors';
 import { DiscordService } from '@shared/services';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from '@app/app.component';
 import {
@@ -41,6 +43,7 @@ export function AppInitializer(config: AppConfig) {
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [
     AppConfig,

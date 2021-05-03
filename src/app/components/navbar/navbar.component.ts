@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import * as AppGlobals from 'app.globals';
 
@@ -9,9 +9,20 @@ import * as AppGlobals from 'app.globals';
 })
 export class NavbarComponent implements OnInit {
 
-  title = AppGlobals.APP_NAME;
+  @Input() name: string;
 
-  constructor() {}
+  title = AppGlobals.APP_NAME;
+  history = AppGlobals.APP_HISTORY;
+  collections = AppGlobals.APP_COLLECTION;
+  products = AppGlobals.APP_PRODUCTS;
+  contact = AppGlobals.APP_CONTACT;
+  media = AppGlobals.APP_MEDIA;
+
+  open: boolean;
+
+  constructor() {
+    this.open = false;
+  }
 
   ngOnInit(): void {}
 
