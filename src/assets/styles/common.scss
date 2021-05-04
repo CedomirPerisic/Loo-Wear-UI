@@ -8,6 +8,35 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+/******************** COMMON ELEMENTS  *********************/
+
+// Icons
+.icon { background-repeat: no-repeat; }
+.icon.small {
+  height: 10px;
+  width: 10px;
+  background-size: 10px;
+}
+.icon.medium {
+  height: 15px;
+  width: 15px;
+  background-size: 15px;
+}
+.icon.large {
+  height: 20px;
+  width: 20px;
+  background-size: 20px;
+}
+.facebook-white-icon { background-image: url("../../assets/media/icons/facebook-white-icon.svg"); }
+.instagram-white-icon { background-image: url("../../assets/media/icons/instagram-white-icon.svg"); }
+.facebook-black-icon { background-image: url("../../assets/media/icons/facebook-black-icon.svg"); }
+.instagram-black-icon { background-image: url("../../assets/media/icons/instagram-black-icon.svg"); }
+// Images
+// Buttons
+// Inputs
+// Dropdowns
+
+/***********************************************************/
 
 .page-wrapper {
   min-height: calc(100vh - #{$header-height});
