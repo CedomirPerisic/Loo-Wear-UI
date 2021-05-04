@@ -1,9 +1,49 @@
-<p>footer works!</p>
-<p>{{ "common.test" | translate: { name: "Hello" } }}</p>
-<ul>
-  <li *ngFor="let item of arrToMap | mapping: transformArray">{{ item }}</li>
-</ul>
-<button (click)="showNotification()">Show Notification</button>
 
-<button (click)="changeLang('en')">EN</button>
-<button (click)="changeLang('sr')">SR</button>
+<div>
+    <p>footer works!</p>
+    <p>{{ "common.test" | translate: { name: "Hello" } }}</p>
+    <ul>
+      <li *ngFor="let item of arrToMap | mapping: transformArray">{{ item }}</li>
+    </ul>
+    <button (click)="showNotification()">Show Notification</button>
+    
+    <button (click)="changeLang('en')">EN</button>
+    <button (click)="changeLang('sr')">SR</button>    
+</div>
+<div class="footer-wrapper">
+    <div class="row">
+        <div class="col-6 col-md-3">
+            <h3>Customer Care</h3>
+            <div class="footer-link">How to buy</div>
+            <div class="footer-link">Payments</div>
+            <div class="footer-link">Shipping</div>
+            <div class="footer-link">Returns & Refunds</div>
+            <div class="footer-link">Return Center</div>
+            <div class="footer-link">Size guide</div>
+            <div class="footer-link">Contact us</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <h3>Legal area</h3>
+            <div class="footer-link">Cookie policy</div>
+            <div class="footer-link">Privacy policy</div>
+            <div class="footer-link">Terms of scale</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <h3>Links</h3>
+            <div class="footer-link">About</div>
+            <div class="footer-link">Collections</div>
+            <div class="footer-link">Products</div>
+            <div class="footer-link">LookBook</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <h3>Follow us on social media</h3>
+            <div class="d-flex justify-content-center">
+                <div class="icon medium facebook-white-icon mx-2"></div>
+                <div class="icon medium instagram-white-icon mx-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center p-3">Selvatica Srl | Via Trieste 6, 28065 Cerano (NO) | P.IVA 02636860039 | Capitale Sociale 10.000,00€ | N.Rea NO-248369 | Pec selvaticawear@pec.it</div>
+    <div class="row d-flex justify-content-center p-3">© 2021, SELVATICA Realizzato da Satisfy</div>
+
+</div>

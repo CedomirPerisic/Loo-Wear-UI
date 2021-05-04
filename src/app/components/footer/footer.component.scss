@@ -1,0 +1,25 @@
+.footer-wrapper {
+  width: 100vw;
+  color: #e4e2e2;
+  background-color: #000000;
+  text-align: center;
+  min-height: 300px;
+  padding: 10px 20px 0 20px;
+}
+.footer-link { 
+  font-family: "ITC Avant Garde Gothic", sans-serif;
+  font-size: 14px;
+  padding-bottom: 0.25rem;
+  margin: auto;
+  width: fit-content;
+}
+.footer-link:hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+.facebook-white-icon, .instagram-white-icon { opacity: 0.9; }
+.facebook-white-icon:hover, .instagram-white-icon:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
