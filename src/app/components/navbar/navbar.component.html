@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light nav-pading">
-  <a class="navbar-brand" href="#">
-    <img src="./../../../assets/pictures/logo.jpeg" style="width: 5rem;" alt="">
-  </a>
+  <div >
+    <a class="navbar-brand" href="#">
+      <img src="./../../../assets/pictures/logo.jpeg" style="width: 5rem;" alt="">
+    </a>
+  </div>
+
   <button
     class="navbar-toggler"
     type="button"
@@ -16,26 +19,87 @@
 
   <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarSupportedContent">
     <ul class="navbar-nav">
-      <div class="btn-group" dropdown>
-        <div (mouseover)="open=true" (mouseout)="open=false">
-          <span *ngIf="!open">Hide</span>
-          <span *ngIf="open">Show</span>
+      <div class="dropdown">
+        <button class="dropbtn">{{ history }}</button>
+        <div class="dropdown-content">
+          <ul class="nav-menu">
+            <li>
+              <a class="dropdown-item">Lara</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Una</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Loo</a>
+            </li>
+          </ul>
         </div>
-        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
-                aria-controls="dropdown-basic">
-                <span class="text">
-                  {{ history }}
-                </span>
-          <span class="caret"></span>
-        </button>
-        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
-            role="menu" aria-labelledby="button-basic">
-          <li role="menuitem"><a class="dropdown-item" href="#">Loo</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#">Lara</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#">Unja</a></li>
-        </ul>
       </div>
-      <div class="btn-group" dropdown>
+      <div class="dropdown">
+        <button class="dropbtn">{{ collections }}</button>
+        <div class="dropdown-content">
+          <ul class="nav-menu">
+            <li>
+              <a class="dropdown-item">#2020 ime</a>
+            </li>
+            <li>
+              <a class="dropdown-item">#2021 ime</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">{{ products }}</button>
+        <div class="dropdown-content">
+          <ul class="nav-menu">
+            <li>
+              <a class="dropdown-item">Swimwear</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Wear</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Accessories</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Bags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">{{ media }}</button>
+        <div class="dropdown-content">
+          <ul class="nav-menu">
+            <li>
+              <a class="dropdown-item">Link 1</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Link 2</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Link 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">{{ contact }}</button>
+        <div class="dropdown-content">
+          <ul class="nav-menu">
+            <li>
+              <a class="dropdown-item">Instagram</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Facebook</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Mail</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="btn-group" dropdown>
         <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
                 aria-controls="dropdown-basic">
                 <span class="text">
@@ -96,7 +160,7 @@
           <li role="menuitem"><a class="dropdown-item" href="#">Mail</a></li>
           <li class="divider dropdown-divider"></li>
         </ul>
-      </div>
+      </div> -->
     </ul>
   </div>
 </nav>
