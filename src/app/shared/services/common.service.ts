@@ -16,7 +16,7 @@ export class CommonService {
   constructor(private translate: TranslateService) {}
 
   // Translate
-  changeLang(lang: string) {
+  changeLang(lang: string): void {
     if (this.translate.langs.includes(lang) && lang !== this.currentLang) {
       this.translate.use(lang);
 

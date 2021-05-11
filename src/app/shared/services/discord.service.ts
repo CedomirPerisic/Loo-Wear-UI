@@ -5,21 +5,21 @@ import { environment } from 'environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DiscordService {
-  private _discordEndpoint =
+  private discordEndpoint =
     environment.discord.host +
     environment.discord.serverId +
     environment.discord.webHook;
 
-  private _botUsername = environment.discord.botUsername;
+  private botUsername = environment.discord.botUsername;
 
   errorColor = '#C70039';
   warningColor = '#E8BB1A';
 
   constructor(private http: HttpClient) {}
 
-  sendErrorMessage(message: string) {
+  sendErrorMessage(message: string): void {
     const data = {
-      username: this._botUsername,
+      username: this.botUsername,
       embeds: [
         {
           title: 'ERROR!',
@@ -37,9 +37,9 @@ export class DiscordService {
     return this._sendMessage(data);
   }
 
-  sendWarningMessage(message: string) {
+  sendWarningMessage(message: string): void {
     const data = {
-      username: this._botUsername,
+      username: this.botUsername,
       embeds: [
         {
           title: 'WARNING!',
@@ -57,9 +57,9 @@ export class DiscordService {
     this._sendMessage(data);
   }
 
-  private _sendMessage(data: any) {
+  private _sendMessage(data: any): void {
     this.http
-      .post(this._discordEndpoint, data, {
+      .post(this.discordEndpoint, data, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
         }),
@@ -67,7 +67,7 @@ export class DiscordService {
       .subscribe();
   }
 
-  private _hexToDecimal(hex: string) {
+  private _hexToDecimal(hex: string): number {
     return parseInt(hex.replace('#', ''), 16);
   }
 }

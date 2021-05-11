@@ -10,7 +10,7 @@ export class MappingPipe implements PipeTransform {
    * @param value array to transform.S
    * @param mappingFunction custom function to transform array data.
    */
-  transform(value: any[], mappingFunction: Function) {
+  transform(value: string[], mappingFunction: (value: string[]) => string[]): string[] {
     return mappingFunction(value);
   }
 }
