@@ -1,0 +1,27 @@
+.slideshow-container {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  top: -56px;
+  align-items: flex-start;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slideshow-select {
+  display: flex;
+  bottom: 0;
+  position: absolute;
+  color: white;
+  width: 100%;
+  justify-content: center;
+}
+.slideshow-selected {
+  background-color: white;
+  border-radius: 50%;
+}
+.slideshow-select .circle-icon-white:hover {
+  cursor: pointer;
+  // background-color: white;
+  // border-radius: 50%;
+}
