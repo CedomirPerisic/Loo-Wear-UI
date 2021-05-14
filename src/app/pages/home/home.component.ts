@@ -8,7 +8,7 @@ import { routeAnimation } from '@app/shared/animations';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  public sliderImage: number = 1;
+  public sliderImage = 1;
 
   constructor() {
     this.slideshowTimer();
@@ -17,23 +17,23 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   /**
-  * It changes slides every 5 seconds.
-  */
-  slideshowTimer(){
+   * It changes slides every 5 seconds.
+   */
+  slideshowTimer(): any{
     if (this.sliderImage < 4) {
       this.sliderImage = this.sliderImage + 1;
     } else {
       this.sliderImage = 1;
     }
-    setTimeout(()=>{
-      this.slideshowTimer()  
+    setTimeout(() => {
+      this.slideshowTimer();
     }, 5000);
   }
 
   /**
-  * It selects a slide in the slideshow.
-  */
-  selectSlideshowImage(img: number){
+   * It selects a slide in the slideshow.
+   */
+  selectSlideshowImage(img: number): any{
     this.sliderImage = img;
   }
 
