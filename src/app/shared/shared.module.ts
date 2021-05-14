@@ -16,7 +16,7 @@ import { MappingPipe } from '@shared/pipes';
 
 import * as AppGlobals from 'app.globals';
 
-export function HttpLoaderFactory(http: HttpClient) {
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 

@@ -25,7 +25,7 @@ import {
   LoadingComponent,
 } from '@app/components';
 
-export function AppInitializer(config: AppConfig) {
+export function AppInitializer(config: AppConfig): () => Promise<any> {
   return () => config.init();
 }
 

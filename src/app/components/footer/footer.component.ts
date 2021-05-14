@@ -4,7 +4,7 @@ import { CommonService, NotificationService } from '@shared/services';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
   arrToMap = ['hello', 'world', 'cedomire'];
@@ -16,15 +16,15 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  changeLang(lang: string) {
+  changeLang(lang: string): void {
     this.commonService.changeLang(lang);
   }
 
-  transformArray(value) {
+  transformArray(value: string[]): string[] {
     return value.map((i) => '/' + i);
   }
 
-  showNotification() {
+  showNotification(): void {
     this.notificationService.notify('Success', 'DISMISS', {
       panelClass: 'success',
     });

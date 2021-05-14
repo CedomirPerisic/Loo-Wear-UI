@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarConfig,
+  MatSnackBarRef,
+} from '@angular/material/snack-bar';
 
 import * as AppGlobals from 'app.globals';
 
@@ -7,7 +11,11 @@ import * as AppGlobals from 'app.globals';
 export class NotificationService {
   constructor(private snackBar: MatSnackBar) {}
 
-  notify(message: string, action?: action, options?: NotificationOptions) {
+  notify(
+    message: string,
+    action?: Action,
+    options?: NotificationOptions
+  ): MatSnackBarRef<any> {
     options = options || ({} as NotificationOptions);
 
     if (action === 'DISMISS') {
@@ -18,7 +26,7 @@ export class NotificationService {
   }
 }
 
-export type action = 'DISMISS' | 'RELOAD' | null;
+export type Action = 'DISMISS' | 'RELOAD' | null;
 
 export class NotificationOptions extends MatSnackBarConfig {
   panelClass: 'error' | 'warning' | 'success';

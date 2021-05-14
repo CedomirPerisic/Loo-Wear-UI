@@ -48,7 +48,7 @@ export class AppHttpInterceptor implements HttpInterceptor {
     }
 
     return next.handle(req).pipe(
-      this._retry([
+      this.retry([
         AppGlobals.SERVER_DOWN_STATUS,
         AppGlobals.SERVER_UNAVAILABLE_STATUS,
       ]),
@@ -92,18 +92,18 @@ export class AppHttpInterceptor implements HttpInterceptor {
     );
   }
 
-  private _retry(
+  private retry(
     retryFor: number[],
     delayFor: number = AppGlobals.RETRY_DELAY_LONG,
     maxRetry: number = AppGlobals.RETRY_COUNT
-  ) {
+  ): any {
     return retryWhen((error) => {
       return error.pipe(
-        concatMap((error, count) => {
-          if (count <= maxRetry && retryFor.includes(error.status)) {
-            return of(error);
+        concatMap((err, count) => {
+          if (count <= maxRetry && retryFor.includes(err.status)) {
+            return of(err);
           }
-          return throwError(error);
+          return throwError(err);
         }),
         delay(delayFor)
       );

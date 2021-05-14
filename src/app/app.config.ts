@@ -66,7 +66,7 @@ export class AppConfig {
     return promise;
   }
 
-  translateConfig(config: { langs: string[]; defaultLang: string }) {
+  translateConfig(config: { langs: string[]; defaultLang: string }): void {
     let lang = localStorage.getItem('lang');
 
     if (!lang) {
