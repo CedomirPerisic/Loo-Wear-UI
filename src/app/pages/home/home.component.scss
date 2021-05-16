@@ -1,8 +1,9 @@
+@import "variable";
+
 .slideshow-container {
   display: flex;
-  position: relative;
+  // position: relative;
   height: 100vh;
-  top: -56px;
   align-items: flex-start;
   background-position: center;
   background-size: cover;
@@ -12,12 +13,12 @@
   display: flex;
   bottom: 0;
   position: absolute;
-  color: white;
+  color: $white-color;
   width: 100%;
   justify-content: center;
 }
 .slideshow-selected {
-  background-color: white;
+  background-color: $white-color;
   border-radius: 50%;
 }
 .slideshow-select .circle-icon-white:hover {

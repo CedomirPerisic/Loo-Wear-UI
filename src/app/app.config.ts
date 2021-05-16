@@ -7,6 +7,7 @@ import { catchError, retry } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 import { ConfigModel } from '@shared/models';
+import { CommonService } from '@shared/services';
 
 import { environment } from 'environments/environment';
 
@@ -14,13 +15,13 @@ import * as AppGlobals from 'app.globals';
 
 @Injectable()
 export class AppConfig {
-  constructor(private http: HttpClient, private translate: TranslateService) {}
+  constructor(
+    private http: HttpClient,
+    private translate: TranslateService,
+    private commonService: CommonService
+  ) {}
 
   init(): Promise<any> {
-    if (!environment.production) {
-      console.log('DEBUG: Config -> init config');
-    }
-
     const configSources = [
       // Multiple trusted source need to be manually added
       this.http
@@ -47,15 +48,11 @@ export class AppConfig {
         // !Can be security issue!
         // But as we need all config data from server we can ignore this issue
         config = { ...config, ...item };
+        this.commonService.config = config;
+        if (!environment.production) {
+          console.log('DEBUG: config data => ', this.commonService.config);
+        }
       });
-
-      if (Object.entries(config).length !== 0) {
-        localStorage.setItem('config', JSON.stringify(config));
-      }
-
-      if (!environment.production) {
-        console.log('DEBUG: Config -> Set translations => ', config);
-      }
 
       this.translateConfig({
         langs: config.langs || ['en', 'sr'],

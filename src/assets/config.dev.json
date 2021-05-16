@@ -1,7 +1,56 @@
 {
-  "langs": [
-    "en",
-    "sr"
-  ],
-  "defaultLang": "en"
+  "langs": ["en", "sr"],
+  "defaultLang": "en",
+  "navigation": [
+    {
+      "name": "History",
+      "url": "history",
+      "links": [
+        {
+          "name": "Una",
+          "url": "history/una"
+        },
+        {
+          "name": "Lara",
+          "url": "history/lara"
+        },
+        {
+          "name": "Loo",
+          "url": "history/loo"
+        }
+      ]
+    },
+    {
+      "name": "Collection",
+      "url": "collection",
+      "links": [
+        {
+          "name": "2020 Name",
+          "url": "collection/2020"
+        },
+        {
+          "name": "2021 Name",
+          "url": "collection/2021"
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "url": "product",
+      "links": [
+        { "name": "swimming", "url": "product/swimming" },
+        { "name": "Wears", "url": "product/wears" },
+        { "name": "Accessories", "url": "product/accessories" },
+        { "name": "bags", "url": "product/bags" }
+      ]
+    },
+    {
+      "name": "LookBook",
+      "url": "look-book"
+    },
+    {
+      "name": "Contact",
+      "url": "contact"
+    }
+  ]
 }

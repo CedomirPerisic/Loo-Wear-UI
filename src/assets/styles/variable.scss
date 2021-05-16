@@ -1,7 +1,15 @@
+// BREAK POINTS:
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
 // FONT FAMILY:
 
 // FONT-SIZE:
-$default-font-size: 1rem;
+$default-font-size: 1rem; // 16px
+$medium-font-size: 0.875rem; // 14px
 
 // COLORS:
 $black-color: #000000;
@@ -14,5 +22,11 @@ $success-color: #689f38;
 $primary-color: #e7a992;
 $primary-color-light: #f9ebe6;
 
+// Z-INDEX
+$z-index-1: 99;
+$z-index-2: 999;
+$z-index-3: 9999;
+
 // COMPONENTS:
-$header-height: 56px;
+$navbar-height: 60px;
+$navbar-gradient: linear-gradient(180deg, #00000025 0%, transparent 100%);

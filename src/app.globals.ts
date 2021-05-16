@@ -1,11 +1,15 @@
-export const APP_NAME = 'Loo Wear';
-export const APP_HISTORY = 'History';
-export const APP_COLLECTION = 'Collection';
-export const APP_PRODUCTS = 'Products';
-export const APP_CONTACT = 'Contact';
-export const APP_MEDIA = 'Media';
-
+export const BASE_URL = '/';
 export const LOADING_INIT_STATE = false;
+
+// UI
+export const APP_NAME = 'Loo Wear';
+export const NAVBAR_OFFSET = 16;
+
+export const BREAKPOINT_SM = 576;
+export const BREAKPOINT_MD = 768;
+export const BREAKPOINT_LG = 992;
+export const BREAKPOINT_XL = 1200;
+export const BREAKPOINT_XXL = 1400;
 
 // status
 export const OK_STATUS = 200;

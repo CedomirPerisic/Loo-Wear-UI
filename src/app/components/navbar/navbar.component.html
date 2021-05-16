@@ -1,170 +1,72 @@
-<div class="navbar-wrapper">
-  
-  <nav class="navbar navbar-expand-lg navbar-light nav-pading">
-    <div >
-      <a class="navbar-brand" href="#">
-        <img src="./../../../assets/pictures/logo.jpeg" style="width: 5rem;" alt="">
-      </a>
-    </div>
-  
+<div
+  class="
+    navbar-wrapper
+    d-flex
+    align-items-center
+    justify-content-between
+    w-100
+    z-index-3
+  "
+  [ngClass]="{ transparent: isTransparent }"
+>
+  <nav class="navbar navbar-expand-md navbar-light nav-pading w-100">
     <button
       class="navbar-toggler"
       type="button"
       data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
+      (click)="toggleNavbar()"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-  
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <div class="dropdown">
-          <button class="dropbtn">{{ history }}</button>
-          <div class="dropdown-content">
-            <ul class="nav-menu">
-              <li>
-                <a class="dropdown-item">Lara</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Una</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Loo</a>
-              </li>
-            </ul>
-          </div>
+
+    <div>
+      <a
+        class="navbar-brand p-0 m-0 d-flex align-items-center"
+        [routerLink]="['/']"
+      >
+        <img class="d-none d-md-block" src="/assets/media/logo.jpeg" />
+        <div class="title m-2 {{ show ? 'd-none d-md-block' : 'd-block' }}">
+          {{ title }}
         </div>
-        <div class="dropdown">
-          <button class="dropbtn">{{ collections }}</button>
-          <div class="dropdown-content">
-            <ul class="nav-menu">
-              <li>
-                <a class="dropdown-item">#2020 ime</a>
-              </li>
-              <li>
-                <a class="dropdown-item">#2021 ime</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">{{ products }}</button>
-          <div class="dropdown-content">
-            <ul class="nav-menu">
-              <li>
-                <a class="dropdown-item">Swimwear</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Wear</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Accessories</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Bags</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">{{ media }}</button>
-          <div class="dropdown-content">
-            <ul class="nav-menu">
-              <li>
-                <a class="dropdown-item">Link 1</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Link 2</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Link 3</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">{{ contact }}</button>
-          <div class="dropdown-content">
-            <ul class="nav-menu">
-              <li>
-                <a class="dropdown-item">Instagram</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Facebook</a>
-              </li>
-              <li>
-                <a class="dropdown-item">Mail</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- <div class="btn-group" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
-                  aria-controls="dropdown-basic">
-                  <span class="text">
-                    {{ collections }}
-                  </span>
-            <span class="caret"></span>
-          </button>
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
-              role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" href="#">#2020 ime</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">#2021 ime</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
-                  aria-controls="dropdown-basic">
-                  <span class="text">
-                    {{ products }}
-                  </span>
-            <span class="caret"></span>
-          </button>
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
-              role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" href="#">Swimwear</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Wear</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Accessories</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Bags</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
-                  aria-controls="dropdown-basic">
-                  <span class="text">
-                    {{ media }}
-                  </span>
-            <span class="caret"></span>
-          </button>
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
-              role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" href="#">Instagram</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Facebook</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Mail</a></li>
-            <li class="divider dropdown-divider"></li>
-          </ul>
-        </div>
-        <div class="btn-group" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle header-nav-btn"
-                  aria-controls="dropdown-basic">
-                  <span class="text">
-                    {{ contact }}
-                  </span>
-            <span class="caret"></span>
-          </button>
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu nav-menu"
-              role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item" href="#">Instagram</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Facebook</a></li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Mail</a></li>
-            <li class="divider dropdown-divider"></li>
-          </ul>
-        </div> -->
+      </a>
+    </div>
+
+    <div
+      class="collapse navbar-collapse justify-content-end
+      {{ show ? 'show' : '' }}"
+    >
+      <div
+        class="dropdown d-none d-md-block"
+        appHover="show"
+        [effectOnSelf]="false"
+        affectElement=".dropdown-menu"
+        *ngFor="let nav of navigation"
+      >
+        <a class="dropdown-toggle" [routerLink]="[nav.url || '/']">
+          {{ nav.name }}
+        </a>
+        <ul class="dropdown-menu" *ngIf="nav.links">
+          <li *ngFor="let item of nav.links">
+            <a
+              class="dropdown-item"
+              [routerLink]="[item.url || nav.url || '/']"
+            >
+              {{ item.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- MOBILE -->
+      <div class="backdrop" (click)="toggleNavbar()" *ngIf="show"></div>
+      <ul class="navbar-nav d-block d-md-none">
+        <button type="button" (click)="toggleNavbar()">X</button>
+        <!-- TODO: Add Accordions -->
+        <li class="nav-item" *ngFor="let nav of navigation">
+          <a class="nav-link" [routerLink]="[nav.url || '/']">
+            {{ nav.name }} <span class="sr-only">(current)</span>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
-
 </div>

@@ -13,6 +13,7 @@ import {
 } from '@angular/material/snack-bar';
 
 import { MappingPipe } from '@shared/pipes';
+import { HoverDirective } from '@shared/directives';
 
 import * as AppGlobals from 'app.globals';
 
@@ -21,7 +22,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 const components = [];
-const directives = [];
+const directives = [HoverDirective];
 const pipes = [MappingPipe];
 
 const material = [
