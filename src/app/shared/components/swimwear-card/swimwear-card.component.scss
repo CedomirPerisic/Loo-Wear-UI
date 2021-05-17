@@ -1,0 +1,23 @@
+.card {
+  width: 20%;
+  border: none;
+}
+.product-img {
+  cursor: pointer;
+}
+.product-img:hover {
+  opacity: 0.8;
+}
+.product-btn {
+  position: absolute;
+  left: 38%;
+  top: 70%;
+}
+.card-title,
+.card-text {
+  text-align: center;
+}
+
+.myClass {
+  background: black;
+}
