@@ -1,26 +1,39 @@
+@import "variable";
+
 .main-card {
   width: 100%;
   border: none;
+  padding: 1rem 0;
 }
 .product-img {
   cursor: pointer;
 }
 .product-btn {
+  display: none;
+  width: 60%;
   position: absolute;
-  left: 38%;
-  top: 70%;
+  transform: translate(35%);
+  bottom: 30%;
+  border: none;
+  color: $white-color;
+  background-color: $black-color;
+  border-radius: unset;
 }
 .card-title,
 .card-text {
   text-align: center;
 }
 
-.main-card {
-  padding: 1rem;
-  text-transform: uppercase;
-
-  &:hover {
-    color: red;
-    background-color: transparent;
+.main-card:hover {
+  .product-btn {
+    display: flex;
+    justify-content: center;
   }
+}
+.product-btn:hover {
+  background-color: $primary-color;
+  border: none;
+  color: $black-color;
+  border-radius: unset;
+  transition: 0.5s;
 }

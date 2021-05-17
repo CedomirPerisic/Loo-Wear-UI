@@ -9,8 +9,6 @@ export class ProductCardComponent implements OnInit {
 
   productImg = '/assets/pictures/image-10.JPG';
 
-  show = true;
-
   constructor() { }
 
   ngOnInit(): void {

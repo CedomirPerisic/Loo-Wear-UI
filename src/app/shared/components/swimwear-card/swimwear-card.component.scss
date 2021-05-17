@@ -1,6 +1,9 @@
-.card {
-  width: 20%;
+@import "variable";
+
+.myClass {
+  width: 50%;
   border: none;
+  padding: 1rem 0;
 }
 .product-img {
   cursor: pointer;
@@ -9,15 +12,36 @@
   opacity: 0.8;
 }
 .product-btn {
+  display: none;
+  width: 60%;
   position: absolute;
-  left: 38%;
-  top: 70%;
+  transform: translate(35%);
+  bottom: 30%;
+  border: none;
+  color: $white-color;
+  background-color: $black-color;
+  border-radius: unset;
+}
+
+.card-body {
+  display: none;
 }
 .card-title,
 .card-text {
   text-align: center;
 }
 
-.myClass {
-  background: black;
+.myClass:hover {
+  .product-btn {
+    display: flex;
+    justify-content: center;
+  }
 }
+.product-btn:hover {
+  background-color: $primary-color;
+  border: none;
+  color: $black-color;
+  border-radius: unset;
+  transition: 0.5s;
+}
+
