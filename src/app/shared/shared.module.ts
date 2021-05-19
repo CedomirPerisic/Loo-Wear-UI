@@ -1,3 +1,5 @@
+import { SwimwearCardComponent } from './components/swimwear-card/swimwear-card.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -24,7 +26,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 
-const components = [];
+const components = [ProductCardComponent, SwimwearCardComponent];
 const directives = [HoverDirective];
 const pipes = [MappingPipe];
 
