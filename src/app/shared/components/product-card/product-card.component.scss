@@ -8,11 +8,23 @@
 .product-img {
   cursor: pointer;
 }
+.div {
+  overflow: hidden;
+}
+.sold {
+  background-color: $black-color;
+  padding: 0.5rem;
+  color: $white-color;
+  position: absolute;
+  top: 16px;
+  left: 0;
+}
 .product-btn {
   display: none;
   width: 60%;
   position: absolute;
-  transform: translate(35%);
+  left: 0;
+  right: 0;
   bottom: 30%;
   border: none;
   color: $white-color;
@@ -28,6 +40,9 @@
   .product-btn {
     display: flex;
     justify-content: center;
+    animation: slide 0.5s forwards;
+    opacity: 0;
+    transform: translateY(100px) translateX(35%);
   }
 }
 .product-btn:hover {
@@ -36,4 +51,11 @@
   color: $black-color;
   border-radius: unset;
   transition: 0.5s;
+}
+
+@keyframes slide {
+  100% {
+    transform: translateY(0) translateX(35%);
+    opacity: 1;
+  }
 }

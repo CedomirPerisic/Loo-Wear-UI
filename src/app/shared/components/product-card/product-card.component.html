@@ -1,8 +1,17 @@
 <div class="card product-card">
   <div class="div">
-    <img src="{{ productImg }}" class="card-img-top product-img" alt="..." />
+    <div class="sold">
+      <label class="m-0">Sold Out</label>
+    </div>
+    <img
+      src="{{ productImg }}"
+      class="card-img-top product-img img-fluid"
+      alt="..."
+    />
+    <button class="btn btn-primary product-btn" appHover="show">
+      click me
+    </button>
   </div>
-  <button class="btn btn-primary product-btn" appHover="show">click me</button>
   <div class="card-body">
     <h5 class="card-title">Ime</h5>
     <p class="card-text">50e</p>
