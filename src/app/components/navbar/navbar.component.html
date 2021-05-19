@@ -11,12 +11,12 @@
 >
   <nav class="navbar navbar-expand-md navbar-light nav-pading w-100">
     <button
-      class="navbar-toggler"
+      class="navbar-toggler border-0"
       type="button"
       data-toggle="collapse"
       (click)="toggleNavbar()"
     >
-      <span class="navbar-toggler-icon"></span>
+      <div class="icon large nav-toggle"></div>
     </button>
 
     <div>
@@ -61,11 +61,36 @@
       <ul class="navbar-nav d-block d-md-none">
         <button type="button" (click)="toggleNavbar()">X</button>
         <!-- TODO: Add Accordions -->
-        <li class="nav-item" *ngFor="let nav of navigation">
-          <a class="nav-link" [routerLink]="[nav.url || '/']">
-            {{ nav.name }} <span class="sr-only">(current)</span>
-          </a>
-        </li>
+        <accordion>
+          <accordion-group
+            class=""
+            [isDisabled]="!nav.links"
+            *ngFor="let nav of navigation"
+          >
+            <div
+              class="row justify-content-between align-items-center"
+              accordion-heading
+            >
+              <div
+                class="col py-2 mr-3"
+                [routerLink]="[nav.url || '/']"
+                (click)="disableClick($event)"
+                (click)="toggleNavbar()"
+              >
+                {{ nav.name }}
+              </div>
+              <div class="icon medium arrow mx-2" *ngIf="nav.links"></div>
+            </div>
+            <a
+              class="nav-link"
+              [routerLink]="[item.url || '/']"
+              (click)="toggleNavbar()"
+              *ngFor="let item of nav.links"
+            >
+              {{ item.name }}
+            </a>
+          </accordion-group>
+        </accordion>
       </ul>
     </div>
   </nav>
