@@ -1,37 +1,35 @@
 <div class="homepage-wrapper">
-    <!-- Slideshow -->
-    <div class="slideshow-container slider-image{{sliderImage}}">
-        <div class="slideshow-select">
-            <div class="d-flex" *ngFor="let item of [1,2,3,4]">
-                <div
-                    class="circle-icon-white icon medium mx-1 mb-2"
-                    [ngClass]="{'slideshow-selected' : sliderImage===item}"
-                    (click)="selectSlideshowImage(item)"
-                ></div>
-            </div>
-        </div>
+  <!-- Slideshow -->
+  <div class="slideshow-container slider-image{{ sliderImage }}">
+    <div class="slideshow-select">
+      <div class="d-flex" *ngFor="let item of [1, 2, 3, 4]">
+        <div
+          class="circle-icon-white icon medium mx-1 mb-2"
+          [ngClass]="{ 'slideshow-selected': sliderImage === item }"
+          (click)="selectSlideshowImage(item)"
+        ></div>
+      </div>
     </div>
+  </div>
 
-    <div class="homepage-content">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col">
-            <app-product-card></app-product-card>
-          </div>
-          <div class="col">
-            <app-product-card></app-product-card>
-          </div>
+  <div class="homepage-content">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="col">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="col">
+          <app-product-card></app-product-card>
+        </div>
+        <div class="col">
+          <app-product-card></app-product-card>
         </div>
       </div>
-
-      <app-swimwear-card></app-swimwear-card>
     </div>
+
+    <app-category-card></app-category-card>
+  </div>
 </div>
-
-

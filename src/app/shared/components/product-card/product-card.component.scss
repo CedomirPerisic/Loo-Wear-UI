@@ -1,6 +1,6 @@
 @import "variable";
 
-.main-card {
+.product-card {
   width: 100%;
   border: none;
   padding: 1rem 0;
@@ -24,7 +24,7 @@
   text-align: center;
 }
 
-.main-card:hover {
+.product-card:hover {
   .product-btn {
     display: flex;
     justify-content: center;
