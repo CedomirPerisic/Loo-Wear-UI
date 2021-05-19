@@ -13,6 +13,9 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+
 import { MappingPipe } from '@shared/pipes';
 import { HoverDirective } from '@shared/directives';
 
@@ -31,7 +34,7 @@ const material = [
   MatProgressSpinnerModule,
   MatSnackBarModule,
 ];
-const bootstrap = [];
+const bootstrap = [BsDropdownModule.forRoot(), AccordionModule.forRoot()];
 
 @NgModule({
   declarations: [components, directives, pipes],

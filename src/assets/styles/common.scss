@@ -55,6 +55,12 @@ a:hover {
 .circle-icon-white {
   background-image: url("/assets/media/icons/circle-icon-white.svg");
 }
+.icon.arrow {
+  background-image: url("/assets/media/icons/nav-arrow.svg");
+}
+.icon.nav-toggle {
+  background-image: url("/assets/media/icons/nav-toggle.svg");
+}
 // Images
 .slider-image1 {
   background-image: url("/assets/media/images/img1.jpg");
@@ -71,6 +77,27 @@ a:hover {
 // Buttons
 // Inputs
 // Dropdowns
+
+// Accordion
+accordion-group:focus,
+accordion-group *:focus {
+  outline: none;
+}
+
+.navbar-wrapper {
+  .panel {
+    border: none;
+    border-bottom: 1px solid $gray-color;
+  }
+  .panel-heading.card-header {
+    padding: 0 1rem;
+    background-color: $white-color;
+    border: none;
+  }
+  .panel-body {
+    padding: 0 1rem;
+  }
+}
 
 /***********************************************************/
 

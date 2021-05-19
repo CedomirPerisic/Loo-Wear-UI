@@ -3,8 +3,8 @@
   "defaultLang": "en",
   "navigation": [
     {
-      "name": "History",
-      "url": "history",
+      "name": "About Us",
+      "url": "about-us",
       "links": [
         {
           "name": "Una",

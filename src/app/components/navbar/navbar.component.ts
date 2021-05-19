@@ -59,5 +59,9 @@ export class NavbarComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  disableClick(event: Event): void {
+    event.stopPropagation();
+  }
+
   ngOnInit(): void {}
 }

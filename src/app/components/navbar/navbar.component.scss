@@ -1,4 +1,5 @@
 @import "variable";
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 .navbar-wrapper {
   height: $navbar-height;
@@ -79,6 +80,10 @@
     height: 100vh;
     z-index: $z-index-3;
     animation: slide 0.5s forwards;
+
+    .panel.panel-open .icon {
+      background-position: bottom;
+    }
   }
 
   @keyframes slide {
@@ -99,6 +104,10 @@
 
     .navbar-brand .title {
       color: $white-color;
+    }
+
+    .nav-toggle {
+      background-position: bottom;
     }
   }
 
