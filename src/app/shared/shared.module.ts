@@ -1,4 +1,8 @@
-import { CategoryCardComponent, ProductCardComponent } from '@shared/components';
+import {
+  CategoryCardComponent,
+  ProductCardComponent,
+  ItemsCardComponent,
+} from '@shared/components';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -25,7 +29,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 
-const components = [ProductCardComponent, CategoryCardComponent];
+const components = [
+  ProductCardComponent,
+  CategoryCardComponent,
+  ItemsCardComponent,
+];
 const directives = [HoverDirective];
 const pipes = [MappingPipe];
 

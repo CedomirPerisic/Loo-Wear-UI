@@ -52,5 +52,14 @@
       "name": "Contact",
       "url": "contact"
     }
+  ],
+
+  "products": [
+    {
+      "name": "Lara",
+      "price": "50",
+      "isSold": "sold out",
+      "image": "/assets/pictures/image-10.JPG';"
+    }
   ]
 }

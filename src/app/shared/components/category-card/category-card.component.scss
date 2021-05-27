@@ -36,6 +36,13 @@
     display: flex;
     justify-content: center;
   }
+  .details {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    color: $white-color;
+  }
 }
 .product-btn:hover {
   background-color: $primary-color;
@@ -45,3 +52,6 @@
   transition: 0.5s;
 }
 
+.details {
+  display: none;
+}
