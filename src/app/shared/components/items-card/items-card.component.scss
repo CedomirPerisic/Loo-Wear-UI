@@ -1,11 +1,11 @@
 @import "variable";
 
-.product-card {
+.items-card {
   width: 100%;
   border: none;
   padding: 1rem 0;
 }
-.product-img {
+.items-img {
   cursor: pointer;
   background-image: url("/assets/pictures/image-10.JPG");
   width: 100%;
@@ -14,7 +14,7 @@
   background-size: contain;
   display: block;
 }
-.product-img:hover {
+.items-img:hover {
   background-image: url("/assets/pictures/image-5.JPG");
   width: 100%;
   height: 600px;
@@ -33,7 +33,7 @@
   top: 16px;
   left: 0;
 }
-.product-btn {
+.items-btn {
   display: none;
   width: 60%;
   position: absolute;
@@ -50,8 +50,8 @@
   text-align: center;
 }
 
-.product-card:hover {
-  .product-btn {
+.items-card:hover {
+  .items-btn {
     display: flex;
     justify-content: center;
     animation: slide 0.5s forwards;
@@ -59,7 +59,7 @@
     transform: translateY(100px) translateX(35%);
   }
 }
-.product-btn:hover {
+.items-btn:hover {
   background-color: $primary-color;
   border: none;
   color: $black-color;

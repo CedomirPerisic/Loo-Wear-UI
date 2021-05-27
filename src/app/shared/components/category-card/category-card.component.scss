@@ -1,9 +1,8 @@
 @import "variable";
 
 .myClass {
-  width: 50%;
+  width: 100%;
   border: none;
-  padding: 1rem 0;
 }
 .product-img {
   cursor: pointer;
@@ -39,9 +38,11 @@
   .details {
     display: block;
     position: absolute;
-    top: 50%;
-    left: 35%;
+    transform: translate(20px, 60px);
     color: $white-color;
+  }
+  .product-img {
+    opacity: 0.8;
   }
 }
 .product-btn:hover {
