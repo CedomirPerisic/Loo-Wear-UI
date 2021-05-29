@@ -4,25 +4,25 @@
   "navigation": [
     {
       "name": "About Us",
-      "url": "about-us",
+      "url": "about/about",
       "links": [
         {
           "name": "Una",
-          "url": "history/una"
+          "url": "about/una"
         },
         {
           "name": "Lara",
-          "url": "history/lara"
+          "url": "about/lara"
         },
         {
           "name": "Loo",
-          "url": "history/loo"
+          "url": "about/loo"
         }
       ]
     },
     {
       "name": "Collection",
-      "url": "collection",
+      "url": "collections",
       "links": [
         {
           "name": "Loo 2020",
@@ -40,8 +40,7 @@
       "links": [
         { "name": "swimming", "url": "product/swimming" },
         { "name": "Wears", "url": "product/wears" },
-        { "name": "Accessories", "url": "product/accessories" },
-        { "name": "bags", "url": "product/bags" }
+        { "name": "Accessories", "url": "product/accessories" }
       ]
     },
     {

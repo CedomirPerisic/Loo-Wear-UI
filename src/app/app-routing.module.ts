@@ -14,7 +14,7 @@ const routes: Routes = [
           import('@pages/home/home.module').then((m) => m.HomeModule),
       },
       {
-        path: 'collections/:name',
+        path: 'collections',
         loadChildren: () =>
           import('@pages/collections/collections.module').then(
             (m) => m.CollectionsModule
@@ -26,6 +26,11 @@ const routes: Routes = [
           import('@pages/products/products.module').then(
             (m) => m.ProductsModule
           ),
+      },
+      {
+        path: 'about/:name',
+        loadChildren: () =>
+          import('@pages/about/about.module').then((m) => m.AboutModule),
       },
       {
         // !404 - keep this route at the end of child!!

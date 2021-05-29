@@ -5,6 +5,7 @@ export interface ConfigModel {
   // Navbar:
   navigation: Navigation[];
   products: Products[];
+  collections: Collections[];
 }
 
 export interface Navigation {
@@ -16,5 +17,10 @@ export interface Navigation {
 export interface Products {
   name: string;
   price: number;
+  label: boolean;
+}
+
+export interface Collections {
+  name: string;
   label: boolean;
 }
