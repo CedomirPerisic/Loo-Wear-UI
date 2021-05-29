@@ -9,6 +9,8 @@ import { CommonService } from '@shared/services';
 })
 export class ProductCardComponent implements OnInit {
   productImg = '/assets/pictures/image-10.JPG';
+  buttonName = 'Preview';
+  labelName = 'Sold Out';
 
   products: Products[];
 

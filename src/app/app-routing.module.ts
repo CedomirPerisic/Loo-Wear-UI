@@ -21,6 +21,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'products/:name',
+        loadChildren: () =>
+          import('@pages/products/products.module').then(
+            (m) => m.ProductsModule
+          ),
+      },
+      {
         // !404 - keep this route at the end of child!!
         // move this route at the end of parent array if nav and footer need to be hidden at 404 page
         path: 'page-not-found',

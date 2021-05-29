@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsCardComponent implements OnInit {
   // itemsImg = '/assets/pictures/image-10.JPG';
+  slika = '/assets/pictures/image-7.JPG';
 
   constructor() {}
 

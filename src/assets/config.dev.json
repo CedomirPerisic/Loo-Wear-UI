@@ -25,18 +25,18 @@
       "url": "collection",
       "links": [
         {
-          "name": "2020 Name",
+          "name": "Loo 2020",
           "url": "collection/2020"
         },
         {
-          "name": "2021 Name",
+          "name": "Loo Tropical 2021",
           "url": "collection/2021"
         }
       ]
     },
     {
       "name": "Products",
-      "url": "product",
+      "url": "products/product",
       "links": [
         { "name": "swimming", "url": "product/swimming" },
         { "name": "Wears", "url": "product/wears" },
@@ -50,7 +50,12 @@
     },
     {
       "name": "Contact",
-      "url": "contact"
+      "url": "contact",
+      "links": [
+        { "name": "loo.beachbrand@gmail.com", "url": "contact/beachbrand" },
+        { "name": "FBpage: LOO", "url": "contact/FBpage" },
+        { "name": "IG: loo_wear", "url": "contact/IG" }
+      ]
     }
   ],
 

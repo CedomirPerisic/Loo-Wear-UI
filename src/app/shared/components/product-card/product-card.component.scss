@@ -4,6 +4,7 @@
   width: 100%;
   border: none;
   padding: 1rem 0;
+  cursor: pointer;
 }
 .product-img {
   cursor: pointer;
@@ -43,6 +44,16 @@
     animation: slide 0.5s forwards;
     opacity: 0;
     transform: translateY(100px) translateX(35%);
+    outline: unset;
+  }
+  .product-btn:focus,
+  .product-btn:active {
+    background-color: $primary-color;
+    border: none;
+    color: $black-color;
+    border-radius: unset;
+    transition: 0.5s;
+    outline: unset !important;
   }
 }
 .product-btn:hover {
