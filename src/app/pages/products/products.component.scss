@@ -1,0 +1,28 @@
+@import "variable";
+
+.size-box {
+  border: 1px solid $black-color;
+  height: 30px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.size-box:active {
+  background-color: $primary-color;
+}
+.details-box {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+.material {
+  margin-left: 15px;
+}
+.details-style {
+  align-items: center;
+}
